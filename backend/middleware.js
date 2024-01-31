@@ -17,8 +17,6 @@ const authMiddleware = (req, res, next) => {
     try{
         const decoded = jwt.verify(token, JWT_SECRET);
 
-        // yaha se hm userid pass kar rahe us route ko jo ye middleware use kar raha 
-        // to pass data from middle ware to route we put data in req object
         req.userId = decoded.userId;
 
         next();
